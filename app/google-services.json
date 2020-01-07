@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1080902088629",
+    "firebase_url": "https://senduk-5d6ca.firebaseio.com",
+    "project_id": "senduk-5d6ca",
+    "storage_bucket": "senduk-5d6ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080902088629:android:15dc33df9912572df88bfc",
+        "android_client_info": {
+          "package_name": "com.bagon.senduk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080902088629-l75cpe43c13uec28jqr3tv5fvl1kg9cn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bagon.senduk",
+            "certificate_hash": "f4ee468430a2bdf1ac0a11567c73649be82fa0e2"
+          }
+        },
+        {
+          "client_id": "1080902088629-t9877uo5r0qfqjid44a6u25ace7ljpek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuucSl8merJtWF0rPQrz7rKrD-UYP6a5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080902088629-t9877uo5r0qfqjid44a6u25ace7ljpek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
