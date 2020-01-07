@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.os.Debug;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<String> ProvId = new ArrayList<String>();
     ArrayList<String> KotaId = new ArrayList<String>();
-    ArrayList<String>  KecId = new ArrayList<String>();
+    ArrayList<String> KecId = new ArrayList<String>();
 
     ArrayList<String> SpinProvince = new ArrayList<String>();
     ArrayList<String> SpinKota = new ArrayList<String>();
@@ -239,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void TambahData(View v){
-        String SubProv, SubKota, SubKec, SubKel, SubRw, SubRt, SubKk, SubPend;
+        final String SubProv, SubKota, SubKec, SubKel, SubRw, SubRt, SubKk, SubPend;
         Spinner1 = findViewById(R.id.Province);
         Spinner2 = findViewById(R.id.Kota);
         Spinner3 = findViewById(R.id.Kecamatan);
@@ -258,41 +259,68 @@ public class MainActivity extends AppCompatActivity {
         SubKk = Input3.getText().toString();
         SubPend = Input4.getText().toString();
 
-        Map<String, Object> sensus = new HashMap<>();
+        final Map<String, Object> sensus = new HashMap<>();
         sensus.put("rt",SubRt);
         sensus.put("kk",SubKk);
         sensus.put("penduduk",SubPend);
 
+    //cek if data redundant
         db.collection("sensus")
-        .document(SubProv)
-            .collection("kota")
-            .document(SubKota)
+                .document(SubProv)
+                .collection("kota")
+                .document(SubKota)
                 .collection("kecamatan")
                 .document(SubKec)
-                    .collection("kelurahan")
-                    .document(SubKel)
-                        .collection("rw")
-                        .document(SubRw)
-                            .collection("rt")
-                            .add(sensus)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Toast.makeText(MainActivity.this, "DocumentSnapshot added with ID: " + documentReference.getId(),Toast.LENGTH_SHORT).show();
-                                    Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                .collection("kelurahan")
+                .document(SubKel)
+                .collection("rw")
+                .document(SubRw)
+                .collection("rt")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData().get("rt"));
+                                if(document.getData().get("rt").toString().contains(SubRt)){
+                                    Toast.makeText(MainActivity.this, "Data Redundant", Toast.LENGTH_SHORT).show();
+                                    Log.w(TAG, "Data Redundant");
+                                }else{
+    //submit data if not redundant
+                                    db.collection("sensus")
+                                            .document(SubProv)
+                                            .collection("kota")
+                                            .document(SubKota)
+                                            .collection("kecamatan")
+                                            .document(SubKec)
+                                            .collection("kelurahan")
+                                            .document(SubKel)
+                                            .collection("rw")
+                                            .document(SubRw)
+                                            .collection("rt")
+                                            .add(sensus)
+                                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                @Override
+                                                public void onSuccess(DocumentReference documentReference) {
+                                                    Toast.makeText(MainActivity.this, "DocumentSnapshot added with ID: " + documentReference.getId(), Toast.LENGTH_SHORT).show();
+                                                    Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(MainActivity.this, "Error adding document", Toast.LENGTH_SHORT).show();
+                                                    Log.w(TAG, "Error adding document", e);
+                                                }
+                                            });
                                 }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(MainActivity.this, "Error adding document", Toast.LENGTH_SHORT).show();
-                                    Log.w(TAG, "Error adding document", e);
-                                }
-                            });
-    }
-
-    public boolean CekRedundant(View v, String CekRt){
-        
+                            }
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
     }
 
     public void TampilData(View v){
@@ -313,14 +341,14 @@ public class MainActivity extends AppCompatActivity {
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                    if(task.isSuccessful()){
-                                        for (QueryDocumentSnapshot document : task.getResult()) {
-                                            ///Hasil.setText(document.getData().get("NIM").toString());
-                                            Log.d(TAG, document.getId() + " => " + document.getData());
-                                        }
-                                    }else{
-                                        Log.w(TAG, "Error getting documents.", task.getException());
+                                if(task.isSuccessful()){
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        ///Hasil.setText(document.getData().get("NIM").toString());
+                                        Log.d(TAG, document.getId() + " => " + document.getData());
                                     }
+                                }else{
+                                    Log.w(TAG, "Error getting documents.", task.getException());
+                                }
                                 }
                             });
     }
