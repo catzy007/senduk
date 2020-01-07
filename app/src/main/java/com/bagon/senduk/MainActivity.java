@@ -50,14 +50,12 @@ public class MainActivity extends AppCompatActivity {
     public void ParseCsv(View v){
         try {
             AssetManager mng = getApplicationContext().getAssets();
-            InputStream is = mng.open("areas.csv");
+            InputStream is = mng.open("tbl_provinsi.csv");
             CSVReader reader = new CSVReader(new InputStreamReader(is));
             String[] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 // nextLine[] is an array of values from the line
-                if(nextLine[7].equals("province")) {
-                    System.out.println(nextLine[1]);
-                }
+                System.out.println(nextLine[1]);
             }
         } catch (Exception e) {
             e.printStackTrace();
