@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private static final String TAG = "MainActivity";
     public TextView Hasil;
+    public Spinner spinner;
+    ArrayList<String> SpinProvince = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ParseCsv(View v){
+        spinner = findViewById(R.id.Province);
         try {
             AssetManager mng = getApplicationContext().getAssets();
             InputStream is = mng.open("tbl_provinsi.csv");
@@ -56,7 +62,10 @@ public class MainActivity extends AppCompatActivity {
             while ((nextLine = reader.readNext()) != null) {
                 // nextLine[] is an array of values from the line
                 System.out.println(nextLine[1]);
+                SpinProvince.add(nextLine[1]);
             }
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, SpinProvince);
+            spinner.setAdapter(adapter);
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "The specified file was not found", Toast.LENGTH_SHORT).show();
