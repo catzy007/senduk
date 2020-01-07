@@ -5,48 +5,150 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginLeft="10sp"
+    android:layout_marginRight="10sp"
+    android:layout_marginTop="10sp"
     tools:context=".MainActivity" >
-
-    <EditText
-        android:id="@+id/Input1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/Btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Btn1"
-            android:onClick="TambahData"/>
-
-        <Button
-            android:id="@+id/Btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="ParseCsv"
-            android:text="Btn2" />
-    </LinearLayout>
 
     <TextView
         android:id="@+id/mashok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_marginBottom="10sp"
+        android:text="@string/textview"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/Text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/provinsi" />
 
     <Spinner
         android:id="@+id/Province"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="14sp"
         android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/Text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/kota" />
+
+    <Spinner
+        android:id="@+id/Kota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/Text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/kecamatan" />
+
+    <Spinner
+        android:id="@+id/Kecamatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/Text4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/kelurahan" />
+
+    <Spinner
+        android:id="@+id/Kelurahan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/Text5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/rw" />
+
+    <EditText
+        android:id="@+id/IptRw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="01"
+        android:inputType="number"
+        android:text="01"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/Text6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/rt" />
+
+    <EditText
+        android:id="@+id/IptRt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="01"
+        android:inputType="number"
+        android:text="01"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/Text7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/jumlah_kk" />
+
+    <EditText
+        android:id="@+id/IptKk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="01"
+        android:inputType="number"
+        android:text="01"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/Text8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jumlah_penduduk" />
+
+    <EditText
+        android:id="@+id/IptPnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="01"
+        android:inputType="number"
+        android:text="01"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/BtnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit" />
 
 </LinearLayout>

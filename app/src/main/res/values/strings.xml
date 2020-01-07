@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Senduk</string>
-    <string name="textview">TextView</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="textview">Input Sensus Penduduk</string>
+    <string name="kota">Kota / Kabupaten</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="kelurahan">Kelurahan</string>
+    <string name="rw">RW</string>
+    <string name="rt">RT</string>
+    <string name="submit">Submit</string>
+    <string name="jumlah_kk">Jumlah KK</string>
+    <string name="jumlah_penduduk">Jumlah Penduduk</string>
 </resources>
