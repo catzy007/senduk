@@ -322,34 +322,4 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    public void TampilData(View v){
-        Hasil = (TextView)findViewById(R.id.mashok);
-
-        db.collection("sensus")
-        .document("jawatengah")
-            .collection("kota")
-            .document("semarang")
-                .collection("kecamatan")
-                .document("tembalang")
-                    .collection("kelurahan")
-                    .document("sendangmulyo")
-                        .collection("rw")
-                        .document("01")
-                            .collection("rt")
-                            .get()
-                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if(task.isSuccessful()){
-                                    for (QueryDocumentSnapshot document : task.getResult()) {
-                                        ///Hasil.setText(document.getData().get("NIM").toString());
-                                        Log.d(TAG, document.getId() + " => " + document.getData());
-                                    }
-                                }else{
-                                    Log.w(TAG, "Error getting documents.", task.getException());
-                                }
-                                }
-                            });
-    }
 }

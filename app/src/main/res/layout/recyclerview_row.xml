@@ -8,7 +8,6 @@
         android:id="@+id/HasilData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="HapusData"
         android:text="Output"
         android:textSize="18sp" />
 </LinearLayout>

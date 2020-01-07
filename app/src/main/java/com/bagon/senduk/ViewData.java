@@ -54,7 +54,9 @@ public class ViewData extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
-                                HasilSensus.add(document.getData().get("rt").toString());
+                                HasilSensus.add("RT : " + document.getData().get("rt").toString() +
+                                        "\n" + "Jumlah Kepala keluarga : " + document.getData().get("kk").toString() +
+                                        "\n" + "Jumlah Penduduk : " + document.getData().get("penduduk").toString() + "\n");
                             }
                             adapter = new RecyclerviewAdapter(ViewData.this, HasilSensus);
                             recyclerView.setAdapter(adapter);
