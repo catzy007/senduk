@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20sp"
+    android:layout_marginHorizontal="20sp"
+    tools:context=".MainMenu">
+
+    <TextView
+        android:id="@+id/MainMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/senduk"
+        android:textSize="28sp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aplikasi Sensus Penduduk"
+        android:textSize="14sp"
+        android:layout_marginBottom="20sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/MBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="100sp"
+            android:layout_weight="1"
+            android:text="Input" />
+
+        <Button
+            android:id="@+id/MBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="100sp"
+            android:layout_weight="1"
+            android:text="Lihat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/MBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DUMMY" />
+
+        <Button
+            android:id="@+id/MBtn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="About" />
+    </LinearLayout>
+</LinearLayout>
