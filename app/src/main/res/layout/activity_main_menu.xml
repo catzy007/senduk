@@ -27,7 +27,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="20sp">
 
         <Button
             android:id="@+id/MBtn1"
@@ -51,16 +52,10 @@
 
         <Button
             android:id="@+id/MBtn3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="DUMMY" />
+            android:text="Logout" />
 
-        <Button
-            android:id="@+id/MBtn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="About" />
     </LinearLayout>
 </LinearLayout>
