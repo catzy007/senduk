@@ -24,6 +24,12 @@
         android:textSize="14sp"
         android:layout_marginBottom="20sp"/>
 
+    <TextView
+        android:id="@+id/TxtWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

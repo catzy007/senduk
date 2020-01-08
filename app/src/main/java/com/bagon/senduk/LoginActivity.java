@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     private String Usrnme, Passwd;
     EditText Ipt1, Ipt2;
     Button BtnLogin;
+    boolean isValid = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.d(TAG, document.getData().get("token").toString() + " " + readFromFile(LoginActivity.this));
                                 Log.d(TAG, document.getData().get("token").toString().contains(readFromFile(LoginActivity.this))?"true":"false");
                                 if(document.getData().get("token").toString().contains(readFromFile(LoginActivity.this))){
+                                    isValid = true;
                                     Intent myIntent = new Intent(LoginActivity.this, MainMenu.class);
                                     LoginActivity.this.startActivity(myIntent);
                                 }
@@ -86,13 +88,15 @@ public class LoginActivity extends AppCompatActivity {
                                     for (QueryDocumentSnapshot document : task.getResult()) {
                                         if(document.getData().get("username").toString().contains(Usrnme) &&
                                         document.getData().get("password").toString().contains(Passwd)){
+                                            isValid = true;
                                             writeToFile(document.getData().get("token").toString(),LoginActivity.this);
                                             Intent myIntent = new Intent(LoginActivity.this, MainMenu.class);
                                             LoginActivity.this.startActivity(myIntent);
-                                        }else{
-                                            Toast.makeText(LoginActivity.this, "Username or Password Missmatch.", Toast.LENGTH_SHORT).show();
-                                            Log.w(TAG, "Username or Password Missmatch.", task.getException());
                                         }
+                                    }
+                                    if(isValid == false){
+                                        Toast.makeText(LoginActivity.this, "Username or Password Missmatch.", Toast.LENGTH_SHORT).show();
+                                        Log.w(TAG, "Username or Password Missmatch.", task.getException());
                                     }
                                 } else {
                                     Toast.makeText(LoginActivity.this, "Error getting documents.", Toast.LENGTH_SHORT).show();
