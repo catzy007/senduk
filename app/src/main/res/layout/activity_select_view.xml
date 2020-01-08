@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10sp"
+    android:layout_marginLeft="10sp"
+    android:layout_marginRight="10sp"
+    tools:context=".SelectView">
+
+    <TextView
+        android:id="@+id/SelViiew1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10sp"
+        android:text="Lihat Data Sensus"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/SelView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/provinsi" />
+
+    <Spinner
+        android:id="@+id/SpinView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/SelViiew3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/kota" />
+
+    <Spinner
+        android:id="@+id/SpinView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/SelViiew4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/kecamatan" />
+
+    <Spinner
+        android:id="@+id/SpinView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/SelViiew5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/kelurahan" />
+
+    <Spinner
+        android:id="@+id/SpinView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:spinnerMode="dropdown"/>
+
+    <Button
+        android:id="@+id/SubmitView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/MyRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

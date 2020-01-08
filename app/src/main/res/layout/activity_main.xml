@@ -11,7 +11,7 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/mashok"
+        android:id="@+id/Intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10sp"
@@ -20,7 +20,7 @@
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/Text1"
+        android:id="@+id/SelView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
@@ -34,7 +34,7 @@
         android:spinnerMode="dropdown"/>
 
     <TextView
-        android:id="@+id/Text2"
+        android:id="@+id/SelViiew3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
@@ -47,7 +47,7 @@
         android:textSize="14sp"/>
 
     <TextView
-        android:id="@+id/Text3"
+        android:id="@+id/SelViiew4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
@@ -61,7 +61,7 @@
         android:spinnerMode="dropdown"/>
 
     <TextView
-        android:id="@+id/Text4"
+        android:id="@+id/SelViiew5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"

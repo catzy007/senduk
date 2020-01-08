@@ -260,9 +260,12 @@ public class MainActivity extends AppCompatActivity {
         SubPend = Input4.getText().toString();
 
         final Map<String, Object> sensus = new HashMap<>();
+        sensus.put("rw",SubRw);
         sensus.put("rt",SubRt);
         sensus.put("kk",SubKk);
         sensus.put("penduduk",SubPend);
+
+        Log.d(TAG, "CEK");
 
     //cek if data redundant
         db.collection("sensus")
@@ -274,20 +277,51 @@ public class MainActivity extends AppCompatActivity {
                 .collection("kelurahan")
                 .document(SubKel)
                 .collection("rw")
-                .document(SubRw)
-                .collection("rt")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData().get("rt"));
-                                if(document.getData().get("rt").toString().contains(SubRt)){
-                                    Toast.makeText(MainActivity.this, "Data Redundant", Toast.LENGTH_SHORT).show();
-                                    Log.w(TAG, "Data Redundant");
-                                }else{
+    //check if collection is empty
+                            if(task.getResult().isEmpty()){
+                                db.collection("sensus")
+                                        .document(SubProv)
+                                        .collection("kota")
+                                        .document(SubKota)
+                                        .collection("kecamatan")
+                                        .document(SubKec)
+                                        .collection("kelurahan")
+                                        .document(SubKel)
+                                        .collection("rw")
+                                        .add(sensus)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                Toast.makeText(MainActivity.this, "DocumentSnapshot added with ID: " + documentReference.getId(), Toast.LENGTH_SHORT).show();
+                                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(MainActivity.this, "Error adding document", Toast.LENGTH_SHORT).show();
+                                                Log.w(TAG, "Error adding document", e);
+                                            }
+                                        });
+                            }else {
+                                boolean mark = false;
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    Log.d(TAG, document.getId() + " => " + document.getData().get("rt"));
+                                    if (document.getData().get("rt").toString().contains(SubRt) &&
+                                            document.getData().get("rw").toString().contains(SubRw)) {
+                                        mark = true;
+                                        Toast.makeText(MainActivity.this, "Data Redundant", Toast.LENGTH_SHORT).show();
+                                        Log.w(TAG, "Data Redundant");
+                                    }
+                                }
     //submit data if not redundant
+                                if(mark == false){
+                                    Log.d(TAG, "CEK2");
                                     db.collection("sensus")
                                             .document(SubProv)
                                             .collection("kota")
@@ -297,8 +331,6 @@ public class MainActivity extends AppCompatActivity {
                                             .collection("kelurahan")
                                             .document(SubKel)
                                             .collection("rw")
-                                            .document(SubRw)
-                                            .collection("rt")
                                             .add(sensus)
                                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                                 @Override
