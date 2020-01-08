@@ -17,62 +17,90 @@
         android:layout_marginBottom="10sp"
         android:text="Lihat Data Sensus"
         android:textAlignment="center"
-        android:textSize="14sp" />
+        android:textStyle="bold"
+        android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/SelView2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/provinsi" />
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/SpinView1"
+        <TextView
+            android:id="@+id/SelView2"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/provinsi"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/SpinView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:spinnerMode="dropdown"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/SelViiew3"
+        <TextView
+            android:id="@+id/SelViiew3"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/kota"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/SpinView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/kota" />
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/SpinView2"
+        <TextView
+            android:id="@+id/SelViiew4"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/kecamatan"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/SpinView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/SelViiew4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/kecamatan" />
+        <TextView
+            android:id="@+id/SelViiew5"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/kelurahan"
+            android:textSize="14sp" />
 
-    <Spinner
-        android:id="@+id/SpinView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:spinnerMode="dropdown"/>
-
-    <TextView
-        android:id="@+id/SelViiew5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/kelurahan" />
-
-    <Spinner
-        android:id="@+id/SpinView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:spinnerMode="dropdown"/>
+        <Spinner
+            android:id="@+id/SpinView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/SubmitView"

@@ -11,4 +11,8 @@
     <string name="jumlah_kk">Jumlah KK</string>
     <string name="jumlah_penduduk">Jumlah Penduduk</string>
     <string name="senduk">Senduk</string>
+    <string name="aplikasi_sensus_penduduk">Aplikasi Sensus Penduduk</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>

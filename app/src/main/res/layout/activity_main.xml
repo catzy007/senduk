@@ -17,133 +17,186 @@
         android:layout_marginBottom="10sp"
         android:text="@string/textview"
         android:textAlignment="center"
-        android:textSize="14sp" />
+        android:textStyle="bold"
+        android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/SelView2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/provinsi" />
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/Province"
+        <TextView
+            android:id="@+id/SelView2"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/provinsi"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/Province"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:spinnerMode="dropdown"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/SelViiew3"
+        <TextView
+            android:id="@+id/SelViiew3"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/kota"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/Kota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/kota" />
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/Kota"
+        <TextView
+            android:id="@+id/SelViiew4"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/kecamatan"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/Kecamatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/SelViiew4"
+        <TextView
+            android:id="@+id/SelViiew5"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/kelurahan"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/Kelurahan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/kecamatan" />
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/Kecamatan"
+        <TextView
+            android:id="@+id/Text5"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/rw"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/IptRw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="01"
+            android:inputType="number"
+            android:text="01"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:spinnerMode="dropdown"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/SelViiew5"
+        <TextView
+            android:id="@+id/Text6"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/rt"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/IptRt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="01"
+            android:inputType="number"
+            android:text="01"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/kelurahan" />
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/Kelurahan"
+        <TextView
+            android:id="@+id/Text7"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/jumlah_kk"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/IptKk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="01"
+            android:inputType="number"
+            android:text="01"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:spinnerMode="dropdown"/>
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/Text5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/rw" />
+        <TextView
+            android:id="@+id/Text8"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:text="@string/jumlah_penduduk" />
 
-    <EditText
-        android:id="@+id/IptRw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="01"
-        android:inputType="number"
-        android:text="01"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/Text6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/rt" />
-
-    <EditText
-        android:id="@+id/IptRt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="01"
-        android:inputType="number"
-        android:text="01"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/Text7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/jumlah_kk" />
-
-    <EditText
-        android:id="@+id/IptKk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="01"
-        android:inputType="number"
-        android:text="01"
-        android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/Text8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/jumlah_penduduk" />
-
-    <EditText
-        android:id="@+id/IptPnd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="01"
-        android:inputType="number"
-        android:text="01"
-        android:textSize="14sp" />
+        <EditText
+            android:id="@+id/IptPnd"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="01"
+            android:inputType="number"
+            android:text="01"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/BtnSubmit"
